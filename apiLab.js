@@ -12,9 +12,11 @@ submit.addEventListener("click", ()=> {
 	$('#setup').slideUp();
 });
 let topTitle = document.getElementById('title');
+
+
 topTitle.addEventListener("click", ()=> {
-	$('#posts').hide();
-	$('#setup').show();
+	$('#posts').slideUp();
+	$('#setup').slideDown();
 	let posts = document.getElementById('posts');
 	posts.innerHTML = '';
 
@@ -25,7 +27,7 @@ topTitle.addEventListener("click", ()=> {
 
 // MAKE API CALL TO REDDIT
 function redditCall(qty) { 
-	let url = "https://www.reddit.com/r/aww/.json";
+	let url = "https://www.reddit.com/r/awww/.json";
 
 	$.get(url).done((data)=> {doneResponse(data, qty)}).fail(failResponse());
 
@@ -49,7 +51,7 @@ function doneResponse(data, qty) {
 	}
 	console.log(lego);
 	$('#fail').hide();
-	$('#posts').fadeIn();
+	$('#posts').slideDown();
 }
 
 // NEGATIVE RESPONSE / TEMP HANDLER
