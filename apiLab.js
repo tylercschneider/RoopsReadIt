@@ -44,7 +44,7 @@ function doneResponse(data, qty) {
 	for(let i = 0; i<qty; i++) {
 		let title = posts[i].data.title;
 		let image = posts[i].data.url;
-		let link = posts[i].data.preview.images[0].source.url;
+		let link = posts[i].data.thumbnail;
 		let post = new Post(i, title, image, link);
 		lego.push(post);
 		post.addToDom();
