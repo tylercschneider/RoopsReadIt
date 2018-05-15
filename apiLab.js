@@ -11,6 +11,14 @@ submit.addEventListener("click", ()=> {
 	numChoose.value = "";
 	$('#setup').slideUp();
 });
+let topTitle = document.getElementById('title');
+topTitle.addEventListener("click", ()=> {
+	$('#posts').hide();
+	$('#setup').show();
+	let posts = document.getElementById('posts');
+	posts.innerHTML = '';
+
+});
 
 
 
